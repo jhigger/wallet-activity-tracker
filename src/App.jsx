@@ -33,7 +33,7 @@ function App() {
 			<Container maxW="container.lg" align="center">
 				<ColorMode />
 			</Container>
-			<CardContainer address={wallet_address}>
+			<CardContainer address={wallet_address || ''}>
 				{jsonArray.map((obj, i) => {
 					return <Card key={i} {...obj} />;
 				})}

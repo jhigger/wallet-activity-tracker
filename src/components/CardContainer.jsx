@@ -16,16 +16,21 @@ import {
 import {BsSearch} from 'react-icons/bs';
 import {useState} from 'react';
 
-const AddressField = ({address}) => {
-	const [value, setValue] = useState(address);
+const AddressField = ({initialValue}) => {
+	const [value, setValue] = useState(initialValue);
 
 	const handleChange = (event) => {
 		setValue(event.target.value);
 	};
 
-	const handleSubmit = (event) => {
-		alert('An address was submitted: ' + address);
-		event.preventDefault();
+	const handleSubmit = () => {
+		if (value.length === 44) {
+			alert('A wallet address was submitted: ' + value);
+		} else alert('Invalid wallet address');
+	};
+
+	const handleKeyDown = (event) => {
+		if (event.key === 'Enter') handleSubmit();
 	};
 
 	return (
@@ -36,7 +41,7 @@ const AddressField = ({address}) => {
 				size="md"
 				value={value}
 				onChange={handleChange}
-				onSubmit={handleSubmit}
+				onKeyDown={handleKeyDown}
 			/>
 			<InputRightElement>
 				<IconButton
@@ -44,6 +49,7 @@ const AddressField = ({address}) => {
 					colorScheme={'whiteAlpha'}
 					aria-label="Search wallet address"
 					icon={<BsSearch color={useColorModeValue('black', 'white')} />}
+					onClick={handleSubmit}
 				/>
 			</InputRightElement>
 		</InputGroup>
@@ -65,7 +71,7 @@ const Header = ({address}) => {
 					Wallet Activity Tracker
 				</Text>
 				<Spacer />
-				<AddressField address={address} />
+				<AddressField initialValue={address} />
 			</Flex>
 			<Flex justify={{base: 'center', md: 'normal'}}>
 				<FormControl w="max" display="flex" alignItems="center" mt={2}>
