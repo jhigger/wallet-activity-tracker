@@ -8,7 +8,8 @@ import {
 	Spacer,
 	Text,
 	VStack,
-	IconButton
+	IconButton,
+	Tooltip
 } from '@chakra-ui/react';
 import {BsBoxArrowUpRight} from 'react-icons/bs';
 
@@ -85,15 +86,17 @@ const Details = ({name, marketplace, amount, type, time, url}) => {
 			</Flex>
 			<Spacer />
 			<Box p="2" textAlign={{base: 'start', md: 'end'}} alignSelf="end">
-				<IconButton
-					size="md"
-					fontSize="md"
-					aria-label={'View in explorer'}
-					variant="ghost"
-					color="current"
-					onClick={() => window.open(url, '_blank').focus()}
-					icon={<BsBoxArrowUpRight />}
-				/>
+				<Tooltip label="View in Explorer">
+					<IconButton
+						size="md"
+						fontSize="md"
+						aria-label={'View in explorer'}
+						variant="ghost"
+						color="current"
+						onClick={() => window.open(url, '_blank').focus()}
+						icon={<BsBoxArrowUpRight />}
+					/>
+				</Tooltip>
 			</Box>
 		</VStack>
 	);

@@ -11,7 +11,8 @@ import {
 	Input,
 	InputGroup,
 	InputRightElement,
-	IconButton
+	IconButton,
+	Tooltip
 } from '@chakra-ui/react';
 import {BsSearch} from 'react-icons/bs';
 import {useState} from 'react';
@@ -44,13 +45,15 @@ const AddressField = ({initialValue}) => {
 				onKeyDown={handleKeyDown}
 			/>
 			<InputRightElement>
-				<IconButton
-					size="sm"
-					colorScheme={'whiteAlpha'}
-					aria-label="Search wallet address"
-					icon={<BsSearch color={useColorModeValue('black', 'white')} />}
-					onClick={handleSubmit}
-				/>
+				<Tooltip label="Search">
+					<IconButton
+						size="sm"
+						colorScheme={'whiteAlpha'}
+						aria-label="Search wallet address"
+						icon={<BsSearch color={useColorModeValue('black', 'white')} />}
+						onClick={handleSubmit}
+					/>
+				</Tooltip>
 			</InputRightElement>
 		</InputGroup>
 	);
