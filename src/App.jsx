@@ -4,8 +4,7 @@ import ColorMode from './components/ColorMode';
 import {Container, Box} from '@chakra-ui/react';
 
 function App() {
-	const wallet_address =
-		'bafybeibpjqn2gosn65qflesmhbzd7kio3gnmtyopibptb6hucjyv6q4zhu';
+	const wallet_address = '92Tr5Kd6Q84ZC3wwaSYp9TGtraMbBwTsjq4d6CCGPk3x';
 	const jsonArray = [
 		{
 			transaction_type: 'Bought',
