@@ -14,7 +14,8 @@ function App() {
 			nft: 'solchicks-2192',
 			image:
 				'https://ipfs.io/ipfs/bafybeibpjqn2gosn65qflesmhbzd7kio3gnmtyopibptb6hucjyv6q4zhu/solchicks-2192.png',
-			time: 'datetime.datetime(2021, 12, 30, 20, 31, 54)'
+			time: 'datetime.datetime(2021, 12, 30, 20, 31, 54)',
+			url: 'https://solanart.io/'
 		},
 		{
 			transaction_type: 'type',
@@ -22,7 +23,8 @@ function App() {
 			total_amount: '',
 			nft: 'nft',
 			image: 'image',
-			time: 'time'
+			time: 'time',
+			url: 'https://solanart.io/'
 		}
 	];
 
