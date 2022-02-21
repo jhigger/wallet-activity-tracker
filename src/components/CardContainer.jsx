@@ -8,8 +8,47 @@ import {
 	FormControl,
 	FormLabel,
 	Spacer,
-	Input
+	Input,
+	InputGroup,
+	InputRightElement,
+	IconButton
 } from '@chakra-ui/react';
+import {BsSearch} from 'react-icons/bs';
+import {useState} from 'react';
+
+const AddressField = ({address}) => {
+	const [value, setValue] = useState(address);
+
+	const handleChange = (event) => {
+		setValue(event.target.value);
+	};
+
+	const handleSubmit = (event) => {
+		alert('An address was submitted: ' + address);
+		event.preventDefault();
+	};
+
+	return (
+		<InputGroup maxWidth="md">
+			<Input
+				variant="filled"
+				placeholder="Enter Wallet Address"
+				size="md"
+				value={value}
+				onChange={handleChange}
+				onSubmit={handleSubmit}
+			/>
+			<InputRightElement>
+				<IconButton
+					size="sm"
+					colorScheme={'whiteAlpha'}
+					aria-label="Search wallet address"
+					icon={<BsSearch color={useColorModeValue('black', 'white')} />}
+				/>
+			</InputRightElement>
+		</InputGroup>
+	);
+};
 
 const Header = ({address}) => {
 	return (
@@ -26,13 +65,7 @@ const Header = ({address}) => {
 					Wallet Activity Tracker
 				</Text>
 				<Spacer />
-				<Input
-					variant="filled"
-					placeholder="Enter Wallet Address"
-					size="md"
-					maxWidth="md"
-					value={address}
-				/>
+				<AddressField address={address} />
 			</Flex>
 			<Flex justify={{base: 'center', md: 'normal'}}>
 				<FormControl w="max" display="flex" alignItems="center" mt={2}>
