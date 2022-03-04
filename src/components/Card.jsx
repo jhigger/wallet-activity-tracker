@@ -9,19 +9,21 @@ import {
 	Text,
 	VStack,
 	IconButton,
-	Tooltip
+	Tooltip,
+	Skeleton
 } from '@chakra-ui/react';
 import {BsBoxArrowUpRight} from 'react-icons/bs';
 
 const NFT = ({src}) => {
+	const size = '3xs';
 	return (
 		<Box minW="max" p={2} align="center">
 			<Image
-				boxSize={{base: '3xs'}}
+				boxSize={{base: size}}
 				borderRadius={{base: 'xl'}}
 				objectFit="cover"
 				src={src}
-				fallbackSrc="https://via.placeholder.com/400x400?text=NFT"
+				fallback={<Skeleton h={size} w={size} borderRadius="xl" />}
 				alt="NFT"
 			/>
 		</Box>
