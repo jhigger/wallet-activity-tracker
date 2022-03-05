@@ -15,9 +15,9 @@ import {
 import {BsBoxArrowUpRight} from 'react-icons/bs';
 
 const NFT = ({src}) => {
-	const size = '3xs';
+	const size = '10rem';
 	return (
-		<Box minW="max" p={2} align="center">
+		<Flex minW="max" p={2} align="center" justify="center">
 			<Image
 				boxSize={{base: size}}
 				borderRadius={{base: 'xl'}}
@@ -26,7 +26,7 @@ const NFT = ({src}) => {
 				fallback={<Skeleton h={size} w={size} borderRadius="xl" />}
 				alt="NFT"
 			/>
-		</Box>
+		</Flex>
 	);
 };
 
@@ -44,7 +44,7 @@ const Details = ({name, marketplace, amount, type, time, url}) => {
 					>
 						{name}
 					</Text>
-					<Box mt={2}>
+					<Box mt={1}>
 						<chakra.span
 							color={useColorModeValue('gray.600', 'gray.400')}
 							display={{base: 'none', lg: 'inline'}}
@@ -60,7 +60,7 @@ const Details = ({name, marketplace, amount, type, time, url}) => {
 							{marketplace}
 						</Text>
 					</Box>
-					<Box mt={2}>
+					<Box mt={1}>
 						<chakra.span
 							color={useColorModeValue('brand.600', 'brand.300')}
 							display={{base: 'none', lg: 'inline'}}
@@ -73,7 +73,7 @@ const Details = ({name, marketplace, amount, type, time, url}) => {
 					</Box>
 				</Box>
 				<Spacer />
-				<Box minW="min" p="2" textAlign={{base: 'start', md: 'end'}}>
+				<Box minW="min" p="2" textAlign={{base: 'start', md: 'end'}}> 
 					<chakra.h2
 						fontSize={{base: '2xl', lg: '3xl'}}
 						color={type == 'BOUGHT' ? 'green.300' : 'red.300'}
@@ -81,13 +81,12 @@ const Details = ({name, marketplace, amount, type, time, url}) => {
 					>
 						{type}
 					</chakra.h2>
-					<Text mt={2} color={useColorModeValue('gray.600', 'gray.400')}>
+					<Text mt={1} color={useColorModeValue('gray.600', 'gray.400')}>
 						{time}
 					</Text>
 				</Box>
 			</Flex>
-			<Spacer />
-			<Box p="2" textAlign={{base: 'start', md: 'end'}} alignSelf="end">
+			<Box p={2} textAlign={{base: 'start', md: 'end'}} alignSelf="end">
 				<Tooltip label="View in Explorer">
 					<IconButton
 						size="md"
