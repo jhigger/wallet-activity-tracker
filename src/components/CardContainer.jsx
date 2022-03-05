@@ -25,7 +25,7 @@ const AddressField = ({initialValue}) => {
 	};
 
 	const handleSubmit = () => {
-		if (value.length === 44) {
+		if (value.length >= 32 && value.length <= 44) {
 			alert('A wallet address was submitted: ' + value);
 		} else alert('Invalid wallet address');
 	};
