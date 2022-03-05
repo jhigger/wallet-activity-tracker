@@ -33,7 +33,7 @@ const NFT = ({src}) => {
 const Details = ({name, marketplace, amount, type, time, url}) => {
 	return (
 		<VStack w="full">
-			<Flex p={2} w="full" flexDirection={{base: 'column', md: 'row'}}>
+			<Flex w="full" flexDirection={{base: 'column', md: 'row'}}>
 				<Box p="2">
 					<Text
 						fontSize={{base: '2xl', lg: '3xl'}}
@@ -73,7 +73,7 @@ const Details = ({name, marketplace, amount, type, time, url}) => {
 					</Box>
 				</Box>
 				<Spacer />
-				<Box minW="min" p="2" textAlign={{base: 'start', md: 'end'}}> 
+				<Box minW="min" p="2" textAlign={{base: 'start', md: 'end'}}>
 					<chakra.h2
 						fontSize={{base: '2xl', lg: '3xl'}}
 						color={type == 'BOUGHT' ? 'green.300' : 'red.300'}
